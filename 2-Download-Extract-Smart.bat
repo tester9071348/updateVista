@@ -1,5 +1,6 @@
 @echo off
 
+:: '0' Will download everything, '1' will download only the missing updates for your architecture
 set "backup=0"
 set ping_timer=3
 
@@ -15,7 +16,8 @@ if not exist "%~dp0000-wget\%arch%\" (
 	mkdir "%~dp0000-wget\%arch%\"
 )
 
-set "link=https://eternallybored.org/misc/wget/1.21.3/%bit%/wget.exe"
+@REM set "link=https://eternallybored.org/misc/wget/1.21.3/%bit%/wget.exe"
+set "link=https://eternallybored.org/misc/wget/1.21.4/%bit%/wget.exe"
 
 :WGET
 if not exist "%~dp0000-wget\%arch%\wget.exe" (
@@ -28,12 +30,12 @@ if not exist "%~dp0000-wget\%arch%\wget.exe" (
 
 	echo Firefox is needed to open wget's download link.
 	echo Press any key to open the link...
-	pause >nul
+	pause > nul
 	"%~dp0Firefox-52.9.0esr-sha1-download.url" && del "%~dp0Firefox-52.9.0esr-sha1-download.url"
 	
-	echo "Press any key when firefox is installed & made default."
+	echo Press any key when firefox is installed ^& made default.
 	echo.
-	pause>nul
+	pause > nul
 
 	echo [{000214A0-0000-0000-C000-000000000046}]>>"%~dp0000-wget\%arch%\wget-%arch%-Download.url"
 	echo Prop3=19,11>>"%~dp0000-wget\%arch%\wget-%arch%-Download.url"
@@ -46,7 +48,7 @@ if not exist "%~dp0000-wget\%arch%\wget.exe" (
 	echo The file needs to be placed in:
 	echo %~dp0000-wget\%arch%\
 	echo.
-	pause>nul
+	pause > nul
 	"%~dp0000-wget\%arch%\wget-%arch%-Download.url" && del "%~dp0000-wget\%arch%\wget-%arch%-Download.url"
 	
 	echo Press any key to continue when wget-%arch% is placed in:
@@ -58,22 +60,23 @@ if not exist "%~dp0000-wget\%arch%\wget.exe" (
 if exist "%~dp0000-wget\%arch%\wget.exe" (
 	echo wget-%arch% is succesfully placed where it should, proceeding...
 	echo.
-	ping 127.0.0.1 -n %ping_timer% >nul
+	ping 127.0.0.1 -n %ping_timer% > nul
 ) else (
 	echo ERROR! wget-%arch% can't be found in 409-wget\%arch%\
 	echo Press any key to repeat the process...
 	echo.
-	pause>nul
+	pause > nul
 	goto :WGET
 )
 
 echo Wget is in order. Downloading the rest of the tools and updates...
 echo.
-ping 127.0.0.1 -n %ping_timer% >nul
+ping 127.0.0.1 -n %ping_timer% > nul
 
-if %backup% == 0 (echo "Download mode: smart")
-if %backup% == 1 (echo "Download mode: backup")
-ping 127.0.0.1 -n %ping_timer% >nul
+if %backup% == 0 (echo ==== Download mode: smart ====)
+if %backup% == 1 (echo ==== Download mode: backup ====)
+echo.
+ping 127.0.0.1 -n %ping_timer% > nul
 
 :DOWNLOADER
 for /d %%a in (*) do (
@@ -110,7 +113,7 @@ echo ===========================================================================
 echo ========================= Downloading complete ================================
 echo ===============================================================================
 echo.
-ping 127.0.0.1 -n %ping_timer% >nul
+ping 127.0.0.1 -n %ping_timer% > nul
 
 :7ZIP
 for /f "tokens=2*" %%i in ('Reg Query "HKEY_LOCAL_MACHINE\SOFTWARE\7-Zip" /v "Path" 2^>Nul') do Set "ExePath=%%j"
@@ -119,7 +122,7 @@ if not defined ExePath (
 	for %%f in ("%~dp0001-Tools\7zip-*-%arch%.exe") do (
 		%%f /S /D="%programfiles%\7-Zip"
 		echo 7zip has been installed in "%programfiles%\7-Zip"
-		ping 127.0.0.1 -n %ping_timer% >nul
+		ping 127.0.0.1 -n %ping_timer% > nul
 	)
 	goto :7ZIP
 )
@@ -132,11 +135,11 @@ REM echo =======================================================================
 if exist "%~dp0001-Tools\406-Vista_SHA2_WUC.7z" (
 	if not exist "%~dp0406-Vista_SHA2_WUC\Install_WUC.cmd" (
 		echo Extracting Vista_SHA2_WUC
-		ping 127.0.0.1 -n %ping_timer% >nul
-		"%programfiles%\7-Zip\7z.exe" x "%~dp0001-Tools\406-Vista_SHA2_WUC.7z" -o"%~dp0406-Vista_SHA2_WUC" -aoa >nul
+		ping 127.0.0.1 -n %ping_timer% > nul
+		"%programfiles%\7-Zip\7z.exe" x "%~dp0001-Tools\406-Vista_SHA2_WUC.7z" -o"%~dp0406-Vista_SHA2_WUC" -aoa > nul
 	)
 ) else (
-	echo "406-Vista_SHA2_WUC.7z doesn't exist, nothing to extract"
+	echo 406-Vista_SHA2_WUC.7z doesn't exist, nothing to extract
 )
 
 REM "%programfiles%\7-Zip\7z.exe" x "%~dp0001-Tools\407-BypassESU-v7-WS2008-(pass=2023).7z" -o"%~dp0407-BypassESU-v7-WS2008" -p2023 -aoa
@@ -146,7 +149,7 @@ REM if not exist "%~dp0410-WMF30-KB2506146-Vista-Installer" (mkdir "%~dp0410-WMF
 if exist "%~dp0001-Tools\410-WMF30-KB2506146-Vista-Installer.7z" (
 	if not exist "%~dp0410-WMF30-KB2506146-Vista-Installer\1-Patch-Servicing_Stack.cmd" (
 		echo Extracting WMF30-KB2506146-Vista-Installer
-		ping 127.0.0.1 -n %ping_timer% >nul
+		ping 127.0.0.1 -n %ping_timer% > nul
 		"%programfiles%\7-zip\7z.exe" x "%~dp0001-Tools\410-WMF30-KB2506146-Vista-Installer.7z" -o"%~dp0410-WMF30-KB2506146-Vista-Installer" -p2023 -aoa >nul
 	)
 )
@@ -158,31 +161,31 @@ REM echo =======================================================================
 if exist "%~dp0001-Tools\DirectX-Repack-x86&x64.zip" (
 	if not exist "%~dp0211-Repacks\DirectX_Redist_Repack_x86_x64.exe" (
 		echo Extracting DirectX_Redist_Repack_x86_x64
-		"%programfiles%\7-Zip\7z.exe" x "%~dp0001-Tools\DirectX-Repack-x86&x64.zip" -o"%~dp0211-Repacks\" -aoa >nul
-		ping 127.0.0.1 -n %ping_timer% >nul
+		"%programfiles%\7-Zip\7z.exe" x "%~dp0001-Tools\DirectX-Repack-x86&x64.zip" -o"%~dp0211-Repacks\" -aoa > nul
+		ping 127.0.0.1 -n %ping_timer% > nul
 	)
 )
 
 if exist "%~dp0001-Tools\dotNetFx35-Repack_x86_x64_*.zip" (
 	if not exist "%~dp0211-Repacks\dotNetFx35_x86_x64.exe" (
 		echo Extracting dotNetFx35_x86_x64
-		ping 127.0.0.1 -n %ping_timer% >nul
-		"%programfiles%\7-Zip\7z.exe" x "%~dp0001-Tools\dotNetFx35-Repack_x86_x64_*.zip" -o"%~dp0211-Repacks\" -aoa >nul
+		ping 127.0.0.1 -n %ping_timer% > nul
+		"%programfiles%\7-Zip\7z.exe" x "%~dp0001-Tools\dotNetFx35-Repack_x86_x64_*.zip" -o"%~dp0211-Repacks\" -aoa > nul
 	)
 )
 
 if exist "%~dp0001-Tools\NDP462-Repack-x86-x64-ENU_*.zip" (
 	if not exist "%~dp0211-Repacks\NDP462-x86-x64-ENU.exe" (
 		echo Extracting NDP462-x86-x64-ENU
-		"%programfiles%\7-Zip\7z.exe" x "%~dp0001-Tools\NDP462-Repack-x86-x64-ENU_*.zip" -o"%~dp0211-Repacks\" -aoa >nul
-		ping 127.0.0.1 -n %ping_timer% >nul
+		"%programfiles%\7-Zip\7z.exe" x "%~dp0001-Tools\NDP462-Repack-x86-x64-ENU_*.zip" -o"%~dp0211-Repacks\" -aoa > nul
+		ping 127.0.0.1 -n %ping_timer% > nul
 	)
 )
 
 echo.
 echo Creating WinDefender Definition download link...
 echo.
-ping 127.0.0.1 -n %ping_timer% >nul
+ping 127.0.0.1 -n %ping_timer% > nul
 
 set "link=https://go.microsoft.com/fwlink/?LinkID=121721^&clcid=0x409^&arch=%arch%^&eng=0.0.0.0^&avdelta=0.0.0.0^&asdelta=0.0.0.0^&prod=925A3ACA-C353-458A-AC8D-A7E5EB378092"
 
@@ -194,7 +197,7 @@ echo IDList=>>"%~dp0WinDef-Definitions-%arch%.url"
 
 echo Creating product red and ultimate extras URL shortcut and exiting
 echo.
-ping 127.0.0.1 -n %ping_timer% >nul
+ping 127.0.0.1 -n %ping_timer% > nul
 
 echo [{000214A0-0000-0000-C000-000000000046}]>>webarchive-product-red.url
 echo Prop3=19,11>>webarchive-product-red.url
@@ -212,7 +215,7 @@ echo.
 echo ===============================================================================
 echo ======================== Everything is Complete ===============================
 echo ===============================================================================
-ping 127.0.0.1 -n %ping_timer% >nul
+ping 127.0.0.1 -n %ping_timer% > nul
 
 goto :EOF
 
