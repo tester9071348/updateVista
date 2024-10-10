@@ -10,7 +10,7 @@ for /f "tokens=6 delims=[]. " %%# in ('ver') do if %%# geq 7600 (
 :: IE9 Cummulative update kb number
 set IE9KB=kb5043049
 :: 's' for shutdown, 'r' for restart
-set "shutdown_mode=s"
+set "shutdown_mode=r"
 set "shutdown_timer=60"
 set "ping_timer=10"
 
@@ -29,8 +29,8 @@ if not exist "%~dp0WAVE1.txt" (
 		echo			[%%a]
 		echo ===============================================================================
 
-		pushd %%a && echo %%a>>%~dp0pathlog.txt && cd>>%~dp0pathlog.txt && echo.>>%~dp0pathlog.txt
-		for %%f in (*%arch%*.msu) do (
+		pushd %%a
+		for %%f in ("*%arch%*.msu") do (
 			for /f "tokens=2 delims=-" %%A in ('echo "%%f"') do (
 				if exist "%SystemRoot%\servicing\packages\package_*_for_%%A*.mum" (
 					echo %%A exist, skipping...
@@ -74,10 +74,10 @@ if not exist "%~dp0WAVE2.txt" (
 	
 	if exist "%~dp0211-Repacks\" (
 		pushd "%~dp0211-Repacks"
-		::dotNet 3.5 Repack. Will always attempt install. 
+		::dotNet 3.5 Repack. Will always attempt to install. 
 		echo dotNet 3.5 Repack will be installed if it is not already installed.
 		for %%f in (dotNetFx35_x86_x64.exe) do (%%f -ai -gm2 -qn -x99 && echo %%f>>"%~dp0log.txt")
-		::dotNet 4.6.2 Repack. Will always attempt install.
+		::dotNet 4.6.2 Repack. Will always attempt to install.
 		echo dotNet 4.6.2 Repack will be installed if it is not already installed.
 		for %%f in (NDP462-x86-x64-ENU.exe) do (%%f -ai -gm2 -qn -x99 && echo %%f>>"%~dp0log.txt")
 		popd
@@ -89,8 +89,8 @@ if not exist "%~dp0WAVE2.txt" (
 		echo			[%%a]
 		echo ===============================================================================
 
-		pushd %%a && echo %%a>>%~dp0pathlog.txt && cd>>%~dp0pathlog.txt && echo.>>%~dp0pathlog.txt
-		for %%f in (*%arch%*.msu) do (
+		pushd %%a
+		for %%f in ("*%arch%*.msu") do (
 			for /f "tokens=2 delims=-" %%A in ('echo "%%f"') do (
 				if exist "%SystemRoot%\servicing\packages\package_*_for_%%A*.mum" (
 					echo %%A exist, skipping...
@@ -122,8 +122,8 @@ for /d %%a in (30*) do (
 	echo			[%%a]
 	echo ===============================================================================
 
-	pushd %%a && echo %%a>>%~dp0pathlog.txt && cd>>%~dp0pathlog.txt && echo.>>%~dp0pathlog.txt
-	for %%f in (*%arch%*.msu) do (
+	pushd %%a
+	for %%f in ("*%arch%*.msu") do (
 		for /f "tokens=2 delims=-" %%A in ('echo "%%f"') do (
 			if exist "%SystemRoot%\servicing\packages\package_*_for_%%A*.mum" (
 				echo %%A exist, skipping...
