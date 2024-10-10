@@ -2,12 +2,12 @@
 
 set "backup=0"
 set ping_timer=3
-set "arch=x32"
-if exist "%WinDir%\SysWOW64" set "arch=x64"
+@REM set "arch=x86"
+if exist "%WinDir%\SysWOW64" set "arch=x64" (else set "arch=x86")
 
 if not exist "%~dp0000-wget\%arch%\" (mkdir "%~dp0000-wget\%arch%\" 2>nul)
 
-if "%arch%" == "x32" set link=https://eternallybored.org/misc/wget/1.21.3/32/wget.exe
+if "%arch%" == "x86" set link=https://eternallybored.org/misc/wget/1.21.3/32/wget.exe
 if "%arch%" == "x64" set link=https://eternallybored.org/misc/wget/1.21.3/64/wget.exe
 
 :WGET
@@ -64,7 +64,8 @@ echo Wget is in order. Downloading the rest of the tools and updates...
 echo.
 ping 127.0.0.1 -n %ping_timer% >nul
 
-if %backup% == 1 (echo Download mode: backup) else (echo Download mode: smart)
+if %backup% == 0 (echo "Download mode: smart")
+if %backup% == 1 (echo "Download mode: backup")
 ping 127.0.0.1 -n %ping_timer% >nul
 
 :DOWNLOADER
@@ -75,7 +76,8 @@ for /d %%a in (*) do (
 			if not exist "%~dp0%%a\%%i" (
 				if %backup% == 1 (
 					"%~dp0000-wget\%arch%\wget.exe" -q --show-progress --no-hsts --no-check-certificate -O "%%i" "%%j"
-				) else (
+				)
+				if %backup% == 0 (
 					if %%a == 001-Tools (
 						"%~dp0000-wget\%arch%\wget.exe" -q --show-progress --no-hsts --no-check-certificate -O "%%i" "%%j"
 					) else (
@@ -127,7 +129,7 @@ if exist "%~dp0001-Tools\406-Vista_SHA2_WUC.7z" (
 		"%programfiles%\7-Zip\7z.exe" x "%~dp0001-Tools\406-Vista_SHA2_WUC.7z" -o"%~dp0406-Vista_SHA2_WUC" -aoa >nul
 	)
 ) else (
-	echo 406-Vista_SHA2_WUC.7z" doesn't exist! Nothing to extract!
+	echo "406-Vista_SHA2_WUC.7z doesn't exist, nothing to extract"
 )
 
 REM "%programfiles%\7-Zip\7z.exe" x "%~dp0001-Tools\407-BypassESU-v7-WS2008-(pass=2023).7z" -o"%~dp0407-BypassESU-v7-WS2008" -p2023 -aoa
@@ -175,7 +177,7 @@ echo Creating WinDefender Definition download link...
 echo.
 ping 127.0.0.1 -n %ping_timer% >nul
 
-if "%arch%" == "x32" set "link=https://go.microsoft.com/fwlink/?LinkID=121721^&clcid=0x409^&arch=x86^&eng=0.0.0.0^&avdelta=0.0.0.0^&asdelta=0.0.0.0^&prod=925A3ACA-C353-458A-AC8D-A7E5EB378092"
+if "%arch%" == "x86" set "link=https://go.microsoft.com/fwlink/?LinkID=121721^&clcid=0x409^&arch=x86^&eng=0.0.0.0^&avdelta=0.0.0.0^&asdelta=0.0.0.0^&prod=925A3ACA-C353-458A-AC8D-A7E5EB378092"
 if "%arch%" == "x64" set "link=https://go.microsoft.com/fwlink/?LinkID=121721^&clcid=0x409^&arch=x64^&eng=0.0.0.0^&avdelta=0.0.0.0^&asdelta=0.0.0.0^&prod=925A3ACA-C353-458A-AC8D-A7E5EB378092"
 
 echo [{000214A0-0000-0000-C000-000000000046}]>>"%~dp0WinDef-Definitions-%arch%.url"
