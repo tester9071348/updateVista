@@ -1,9 +1,9 @@
 ::--------------------------------------------------------------------------------------
 mkdir 001-Tools
 
-echo ;7zip-2301-x32.exe https://www.7-zip.org/a/7z2301.exe>>001-Tools\filelist.txt
+echo ;7zip-2301-x86.exe https://www.7-zip.org/a/7z2301.exe>>001-Tools\filelist.txt
 echo ;7zip-2301-x64.exe https://www.7-zip.org/a/7z2301-x64.exe>>001-Tools\filelist.txt
-echo 7zip-2408-x32.exe https://www.7-zip.org/a/7z2408.exe>>001-Tools\filelist.txt
+echo 7zip-2408-x86.exe https://www.7-zip.org/a/7z2408.exe>>001-Tools\filelist.txt
 echo 7zip-2408-x64.exe https://www.7-zip.org/a/7z2408-x64.exe>>001-Tools\filelist.txt
 
 echo 406-Vista_SHA2_WUC.7z https://gitlab.com/stdout12/adns/uploads/9cc412e91502ca6ce8d1d9fad10b27d6/Vista_SHA2_WUC.7z>>001-Tools\filelist.txt
@@ -19,7 +19,8 @@ echo dotNetFx35-Repack_x86_x64_20240709.zip https://github.com/abbodi1406/dotNet
 echo ;NDP462-Repack-x86-x64-ENU_20240109.zip https://github.com/abbodi1406/dotNetNT6/releases/download/v2024.01.09/NDP462-x86-x64-ENU_20240109.zip>>001-Tools\filelist.txt
 echo ;NDP462-Repack-x86-x64-ENU_20240213.zip https://github.com/abbodi1406/dotNetNT6/releases/download/v2024.02.13/NDP462-x86-x64-ENU_20240213.zip>>001-Tools\filelist.txt
 echo ;NDP462-Repack-x86-x64-ENU_20240514.zip https://github.com/abbodi1406/dotNetNT6/releases/download/v2024.05.14/NDP462-x86-x64-ENU_20240514.zip>>001-Tools\filelist.txt
-echo NDP462-Repack-x86-x64-ENU_20240813.zip https://github.com/abbodi1406/dotNetNT6/releases/download/v2024.08.13/NDP462-x86-x64-ENU_20240813.zip>>001-Tools\filelist.txt
+echo ;NDP462-Repack-x86-x64-ENU_20240813.zip https://github.com/abbodi1406/dotNetNT6/releases/download/v2024.08.13/NDP462-x86-x64-ENU_20240813.zip>>001-Tools\filelist.txt
+echo NDP462-Repack-x86-x64-ENU_20241008.zip https://github.com/abbodi1406/dotNetNT6/releases/download/v2024.10.08/NDP462-x86-x64-ENU_20241008.zip>>001-Tools\filelist.txt
 
 ::--------------------------------------------------------------------------------------
 mkdir 101-Important-Updates
@@ -204,8 +205,11 @@ echo ;windows6.0-kb5041850-x86-2024-08-Security-Monthly-Quality-Rollup-for-WS200
 echo windows6.0-kb5041939-x64-2024-08-Security-and-Quality-Rollup-for-.NET2.0^&3.0.msu https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2024/07/windows6.0-kb5041939-x64_ed3ea42da00fdc05871c57506056a1278a884b50.msu>>302-CU\filelist.txt
 echo windows6.0-kb5041939-x86-2024-08-Security-and-Quality-Rollup-for-.NET2.0^&3.0.msu https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2024/07/windows6.0-kb5041939-x86_c6f88a031640a0bdd596dc6fdb0170693705234d.msu>>302-CU\filelist.txt
 
-echo windows6.0-kb5043135-x64-2024-09-Security-Monthly-Quality-Rollup-for-WS2008.msu https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2024/09/windows6.0-kb5043135-x64_e8dd29c0607b9ecf9e42b152aea0f4a4686a6470.msu>>302-CU\filelist.txt
-echo windows6.0-kb5043135-x86-2024-09-Security-Monthly-Quality-Rollup-for-WS2008.msu https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2024/09/windows6.0-kb5043135-x86_65847156427892c1e670b461e304ab4c3488eb89.msu>>302-CU\filelist.txt
+echo ;windows6.0-kb5043135-x64-2024-09-Security-Monthly-Quality-Rollup-for-WS2008.msu https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2024/09/windows6.0-kb5043135-x64_e8dd29c0607b9ecf9e42b152aea0f4a4686a6470.msu>>302-CU\filelist.txt
+echo ;windows6.0-kb5043135-x86-2024-09-Security-Monthly-Quality-Rollup-for-WS2008.msu https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2024/09/windows6.0-kb5043135-x86_65847156427892c1e670b461e304ab4c3488eb89.msu>>302-CU\filelist.txt
+
+echo windows6.0-kb5044320-x64-2024-10-Security-Monthly-Quality-Rollup-for-WS2008.msu https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2024/09/windows6.0-kb5044320-x64_4bc4d6329f2a8242d0ff481cdb9d7fdc1880a8cd.msu>>302-CU\filelist.txt
+echo windows6.0-kb5044320-x86-2024-10-Security-Monthly-Quality-Rollup-for-WS2008.msu https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2024/09/windows6.0-kb5044320-x86_77d1232af7eb295bedd4137db2e658a5ffc2b95b.msu>>302-CU\filelist.txt
 
 ::--------------------------------------------------------------------------------------
 mkdir 314-IE9-CU
