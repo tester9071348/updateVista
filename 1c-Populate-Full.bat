@@ -1,9 +1,9 @@
 ::--------------------------------------------------------------------------------------
 mkdir 001-Tools
 
-echo ;7zip-2301-x32.exe https://www.7-zip.org/a/7z2301.exe>>001-Tools\filelist.txt
+echo ;7zip-2301-x86.exe https://www.7-zip.org/a/7z2301.exe>>001-Tools\filelist.txt
 echo ;7zip-2301-x64.exe https://www.7-zip.org/a/7z2301-x64.exe>>001-Tools\filelist.txt
-echo 7zip-2408-x32.exe https://www.7-zip.org/a/7z2408.exe>>001-Tools\filelist.txt
+echo 7zip-2408-x86.exe https://www.7-zip.org/a/7z2408.exe>>001-Tools\filelist.txt
 echo 7zip-2408-x64.exe https://www.7-zip.org/a/7z2408-x64.exe>>001-Tools\filelist.txt
 
 echo 406-Vista_SHA2_WUC.7z https://gitlab.com/stdout12/adns/uploads/9cc412e91502ca6ce8d1d9fad10b27d6/Vista_SHA2_WUC.7z>>001-Tools\filelist.txt
