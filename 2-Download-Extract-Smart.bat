@@ -2,13 +2,20 @@
 
 set "backup=0"
 set ping_timer=3
-@REM set "arch=x86"
-if exist "%WinDir%\SysWOW64" set "arch=x64" (else set "arch=x86")
 
-if not exist "%~dp0000-wget\%arch%\" (mkdir "%~dp0000-wget\%arch%\" 2>nul)
+if exist "%WinDir%\SysWOW64" (
+	set "arch=x64"
+	set "bit=64"
+) else (
+	set "arch=x86"
+	set "bit=32"
+)
 
-if "%arch%" == "x86" set link=https://eternallybored.org/misc/wget/1.21.3/32/wget.exe
-if "%arch%" == "x64" set link=https://eternallybored.org/misc/wget/1.21.3/64/wget.exe
+if not exist "%~dp0000-wget\%arch%\" (
+	mkdir "%~dp0000-wget\%arch%\"
+)
+
+set "link=https://eternallybored.org/misc/wget/1.21.3/%bit%/wget.exe"
 
 :WGET
 if not exist "%~dp0000-wget\%arch%\wget.exe" (
@@ -24,7 +31,7 @@ if not exist "%~dp0000-wget\%arch%\wget.exe" (
 	pause >nul
 	"%~dp0Firefox-52.9.0esr-sha1-download.url" && del "%~dp0Firefox-52.9.0esr-sha1-download.url"
 	
-	echo Press any key when firefox is installed ^& made default.
+	echo "Press any key when firefox is installed & made default."
 	echo.
 	pause>nul
 
@@ -177,8 +184,7 @@ echo Creating WinDefender Definition download link...
 echo.
 ping 127.0.0.1 -n %ping_timer% >nul
 
-if "%arch%" == "x86" set "link=https://go.microsoft.com/fwlink/?LinkID=121721^&clcid=0x409^&arch=x86^&eng=0.0.0.0^&avdelta=0.0.0.0^&asdelta=0.0.0.0^&prod=925A3ACA-C353-458A-AC8D-A7E5EB378092"
-if "%arch%" == "x64" set "link=https://go.microsoft.com/fwlink/?LinkID=121721^&clcid=0x409^&arch=x64^&eng=0.0.0.0^&avdelta=0.0.0.0^&asdelta=0.0.0.0^&prod=925A3ACA-C353-458A-AC8D-A7E5EB378092"
+set "link=https://go.microsoft.com/fwlink/?LinkID=121721^&clcid=0x409^&arch=%arch%^&eng=0.0.0.0^&avdelta=0.0.0.0^&asdelta=0.0.0.0^&prod=925A3ACA-C353-458A-AC8D-A7E5EB378092"
 
 echo [{000214A0-0000-0000-C000-000000000046}]>>"%~dp0WinDef-Definitions-%arch%.url"
 echo Prop3^=19,11>>"%~dp0WinDef-Definitions-%arch%.url"
