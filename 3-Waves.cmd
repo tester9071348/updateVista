@@ -139,55 +139,52 @@ for /d %%a in (30*) do (
 )
 
 if exist "%~dp0314-IE9-CU\" (
-
-	echo================================================================================
-	echo			[Internet Explorer 9 Cumulative Update]
-	echo================================================================================
-		
 	pushd "%~dp0314-IE9-CU\"
-	
-	if "%arch%" == "x86" (
-		for %%f in (*%IE9KB%-%arch%*.msu) do (
-			for /f "tokens=2 delims=-" %%A in ('echo "%%f"') do (
-				if exist "%SystemRoot%\servicing\packages\package_*_for_%%A*.mum" (
-					echo %%A exist, skipping...
-				) else (
-					echo %%f missing, installing...
-					Wusa.exe %%f /quiet /norestart
-					echo IE9-%IE9KB%>>"%~dp0log.txt"
+	if exist *.msu (
+		echo ================================================================================
+		echo			[Internet Explorer 9 Cumulative Update]
+		echo ================================================================================
+			
+		if "%arch%" == "x86" (
+			for %%f in (*%IE9KB%-%arch%*.msu) do (
+				for /f "tokens=2 delims=-" %%A in ('echo "%%f"') do (
+					if exist "%SystemRoot%\servicing\packages\package_*_for_%%A*.mum" (
+						echo %%A exist, skipping...
+					) else (
+						echo %%f missing, installing...
+						Wusa.exe %%f /quiet /norestart
+						echo IE9-%IE9KB%>>"%~dp0log.txt"
+					)
 				)
 			)
 		)
-	)
 
-	if "%arch%" == "x64" (
-		mkdir tmp"
-		for /f "usebackq delims=|" %%f in (`dir /b "%~dp0314-IE9-CU\" ^| findstr /i windows6.0-%IE9KB%-%arch%`) do copy %%f "%~dp0314-IE9-CU\tmp" >nul
-		pushd "%~dp0314-IE9-CU\tmp"
-		expand -f:*windows6.0-kb*.cab *.msu "%~dp0314-IE9-CU\tmp" >nul
-		expand -f:* *.cab "%~dp0314-IE9-CU\tmp" >nul
-		for /f %%f in ('dir /b "package_*_for_*.mum"') do findstr /i ExtendedSecurityUpdatesAI %%f >nul || (
-			if exist "%SystemRoot%\servicing\packages\%%f" (
-				echo %%f exists, skipping...
-			) else (
-				echo %%f
-				start /wait pkgmgr /ip /m:%%f /quiet /norestart
-				echo restart>"%~dp0RESTART.txt"
-				echo IE9-%IE9KB%>>"%~dp0log.txt"
+		if "%arch%" == "x64" (
+			mkdir tmp"
+			for /f "usebackq delims=|" %%f in (`dir /b "%~dp0314-IE9-CU\" ^| findstr /i windows6.0-%IE9KB%-%arch%`) do copy %%f "%~dp0314-IE9-CU\tmp" >nul
+			pushd "%~dp0314-IE9-CU\tmp"
+			expand -f:*windows6.0-kb*.cab *.msu "%~dp0314-IE9-CU\tmp" >nul
+			expand -f:* *.cab "%~dp0314-IE9-CU\tmp" >nul
+			for /f %%f in ('dir /b "package_*_for_*.mum"') do findstr /i ExtendedSecurityUpdatesAI %%f >nul || (
+				if exist "%SystemRoot%\servicing\packages\%%f" (
+					echo %%f exists, skipping...
+				) else (
+					echo %%f
+					start /wait pkgmgr /ip /m:%%f /quiet /norestart
+					echo restart>"%~dp0RESTART.txt"
+					echo IE9-%IE9KB%>>"%~dp0log.txt"
+				)
 			)
+			popd
+			rmdir /s /q "tmp"
 		)
-		popd
-		rmdir /s /q "tmp"
 	)
-	
 	popd
 
 	Reg.exe delete "HKLM\SOFTWARE\Microsoft\Internet Explorer\AdvancedOptions\CRYPTO\TLS1.1" /v "OSVersion" /f 2>nul
 	Reg.exe delete "HKLM\SOFTWARE\Microsoft\Internet Explorer\AdvancedOptions\CRYPTO\TLS1.2" /v "OSVersion" /f 2>nul
 	Reg.exe delete "HKLM\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\AdvancedOptions\CRYPTO\TLS1.1" /v "OSVersion" /f 2>nul
 	Reg.exe delete "HKLM\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\AdvancedOptions\CRYPTO\TLS1.2" /v "OSVersion" /f 2>nul
-
-	popd
 )
 
 echo DONE>"%~dp0WAVE3.txt"
