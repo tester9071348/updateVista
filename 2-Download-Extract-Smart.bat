@@ -4,12 +4,11 @@
 set "backup=0"
 set ping_timer=3
 
+set "arch=x86"
+set "bit=32"
 if exist "%WinDir%\SysWOW64" (
 	set "arch=x64"
 	set "bit=64"
-) else (
-	set "arch=x86"
-	set "bit=32"
 )
 
 if not exist "%~dp0000-wget\%arch%\" (
@@ -55,26 +54,24 @@ if not exist "%~dp0000-wget\%arch%\wget.exe" (
 	echo "%~dp0000-wget\%arch%\"
 	echo.
 	pause>nul
+
+	if exist "%~dp0000-wget\%arch%\wget.exe" (
+		echo wget-%arch% is succesfully placed where it should, proceeding...
+		echo.
+		ping 127.0.0.1 -n %ping_timer% > nul
+	) else (
+		echo ERROR! wget-%arch% can't be found in 409-wget\%arch%\
+		echo Press any key to repeat the process...
+		echo.
+		pause > nul
+		goto :WGET
+	)
 )
 
-if exist "%~dp0000-wget\%arch%\wget.exe" (
-	echo wget-%arch% is succesfully placed where it should, proceeding...
-	echo.
-	ping 127.0.0.1 -n %ping_timer% > nul
-) else (
-	echo ERROR! wget-%arch% can't be found in 409-wget\%arch%\
-	echo Press any key to repeat the process...
-	echo.
-	pause > nul
-	goto :WGET
-)
-
-echo Wget is in order. Downloading the rest of the tools and updates...
-echo.
-ping 127.0.0.1 -n %ping_timer% > nul
-
-if %backup% == 0 (echo ==== Download mode: smart ====)
-if %backup% == 1 (echo ==== Download mode: backup ====)
+echo ===============================================================================
+if %backup% == 0 ( echo ========================= Download mode: smart ================================)
+if %backup% == 1 ( echo ========================= Download mode: backup ===============================)
+echo ===============================================================================
 echo.
 ping 127.0.0.1 -n %ping_timer% > nul
 
