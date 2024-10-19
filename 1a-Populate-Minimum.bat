@@ -3,13 +3,13 @@ mkdir 001-Tools
 
 echo ;7zip-2301-x86.exe https://www.7-zip.org/a/7z2301.exe>>001-Tools\filelist.txt
 echo ;7zip-2301-x64.exe https://www.7-zip.org/a/7z2301-x64.exe>>001-Tools\filelist.txt
-echo 7zip-2408-x86.exe https://www.7-zip.org/a/7z2408.exe>>001-Tools\filelist.txt
-echo 7zip-2408-x64.exe https://www.7-zip.org/a/7z2408-x64.exe>>001-Tools\filelist.txt
+echo 7zip-2408-x86-20240811.exe https://www.7-zip.org/a/7z2408.exe>>001-Tools\filelist.txt
+echo 7zip-2408-x64-20240811.exe https://www.7-zip.org/a/7z2408-x64.exe>>001-Tools\filelist.txt
 
-echo 406-Vista_SHA2_WUC.7z https://gitlab.com/stdout12/adns/uploads/9cc412e91502ca6ce8d1d9fad10b27d6/Vista_SHA2_WUC.7z>>001-Tools\filelist.txt
-echo 407-BypassESU-v7-WS2008-(pass=2023).7z https://gitlab.com/stdout12/adns/uploads/fdc7ef68584c12bf09b2358a8b807b66/BypassESU-v7-WS2008.7z>>001-Tools\filelist.txt
-echo 408-WU_DataStore_Fix.zip https://gitlab.com/stdout12/adns/uploads/e4a9c447ae15f7eb8fc42d8e8db54879/WU_DataStore_Fix.zip>>001-Tools\filelist.txt
-echo 410-WMF30-KB2506146-Vista-Installer.7z https://gitlab.com/stdout12/adns/uploads/caed19915206e9b2cb6dde377b9ed19e/WMF30-KB2506146-Vista-Installer.7z>>001-Tools\filelist001.txt
+echo 406-Vista_SHA2_WUC-x86-x64.7z https://gitlab.com/stdout12/adns/uploads/9cc412e91502ca6ce8d1d9fad10b27d6/Vista_SHA2_WUC.7z>>001-Tools\filelist.txt
+echo 407-BypassESU_v7_WS2008-x86-x64-(pass=2023).7z https://gitlab.com/stdout12/adns/uploads/fdc7ef68584c12bf09b2358a8b807b66/BypassESU-v7-WS2008.7z>>001-Tools\filelist.txt
+echo 408-WU_DataStore_Fix-x86-x64.zip https://gitlab.com/stdout12/adns/uploads/e4a9c447ae15f7eb8fc42d8e8db54879/WU_DataStore_Fix.zip>>001-Tools\filelist.txt
+echo 410-WMF30_KB2506146_Vista_Installer-x86-x64.7z https://gitlab.com/stdout12/adns/uploads/caed19915206e9b2cb6dde377b9ed19e/WMF30-KB2506146-Vista-Installer.7z>>001-Tools\filelist.txt
 
 ::--------------------------------------------------------------------------------------
 mkdir 101-Important-Updates
