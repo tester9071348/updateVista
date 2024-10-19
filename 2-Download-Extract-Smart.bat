@@ -1,9 +1,8 @@
 @echo off
 
-:: '0' Will download everything, '1' will download only the missing updates for your architecture
+:: '0' == false, Only missing updates for your architecture will be downloaded, '1' == true, Will download everything
 set "backup=0"
 set ping_timer=3
-
 set "arch=x86"
 set "bit=32"
 if exist "%WinDir%\SysWOW64" (
@@ -11,15 +10,16 @@ if exist "%WinDir%\SysWOW64" (
 	set "bit=64"
 )
 
-if not exist "%~dp0000-wget\%arch%\" (
-	mkdir "%~dp0000-wget\%arch%\"
+set "wget_path=%~dp0000-wget\%arch%"
+if not exist "%wget_path%" (
+	mkdir "%wget_path%"
 )
 
 @REM set "link=https://eternallybored.org/misc/wget/1.21.3/%bit%/wget.exe"
 set "link=https://eternallybored.org/misc/wget/1.21.4/%bit%/wget.exe"
 
 :WGET
-if not exist "%~dp0000-wget\%arch%\wget.exe" (
+if not exist "%wget_path%\wget.exe" (
 	cls
 	echo [{000214A0-0000-0000-C000-000000000046}]>>"%~dp0Firefox-52.9.0esr-sha1-download.url"
 	echo Prop3=19,11>>"%~dp0Firefox-52.9.0esr-sha1-download.url"
@@ -27,40 +27,39 @@ if not exist "%~dp0000-wget\%arch%\wget.exe" (
 	echo URL=https://archive.mozilla.org/pub/firefox/releases/52.9.0esr/win32-sha1/en-US/Firefox%%20Setup%%2052.9.0esr.exe>>"%~dp0Firefox-52.9.0esr-sha1-download.url"
 	echo IDList=>>"%~dp0Firefox-52.9.0esr-sha1-download.url"
 
+	echo ===============================================================================
 	echo Firefox is needed to open wget's download link.
-	echo Press any key to open the link...
-	pause > nul
+	echo The link will open after you click any key.
+	echo Install it and set it as default.
+	echo ===============================================================================
+	pause
 	"%~dp0Firefox-52.9.0esr-sha1-download.url" && del "%~dp0Firefox-52.9.0esr-sha1-download.url"
+	pause
+	echo.
+
+	echo [{000214A0-0000-0000-C000-000000000046}]>>"%wget_path%\wget-%arch%-Download.url"
+	echo Prop3=19,11>>"%wget_path%\wget-%arch%-Download.url"
+	echo [InternetShortcut]>>"%wget_path%\wget-%arch%-Download.url"
+	echo URL=%link%>>"%wget_path%\wget-%arch%-Download.url"
+	echo IDList=>>"%wget_path%\wget-%arch%-Download.url"
+
+
+	echo ===============================================================================
+	echo Download wget.exe and placed it in:
+	echo %wget_path%\wget.exe
+	echo ===============================================================================
+	pause
+	"%wget_path%\wget-%arch%-Download.url" && del "%wget_path%\wget-%arch%-Download.url"
+	pause
+	echo.
 	
-	echo Press any key when firefox is installed ^& made default.
-	echo.
-	pause > nul
-
-	echo [{000214A0-0000-0000-C000-000000000046}]>>"%~dp0000-wget\%arch%\wget-%arch%-Download.url"
-	echo Prop3=19,11>>"%~dp0000-wget\%arch%\wget-%arch%-Download.url"
-	echo [InternetShortcut]>>"%~dp0000-wget\%arch%\wget-%arch%-Download.url"
-	echo URL=%link%>>"%~dp0000-wget\%arch%\wget-%arch%-Download.url"
-	echo IDList=>>"%~dp0000-wget\%arch%\wget-%arch%-Download.url"
-
-
-	echo Press any key to open the download link for wget-%arch%.
-	echo The file needs to be placed in:
-	echo %~dp0000-wget\%arch%\
-	echo.
-	pause > nul
-	"%~dp0000-wget\%arch%\wget-%arch%-Download.url" && del "%~dp0000-wget\%arch%\wget-%arch%-Download.url"
-	
-	echo Press any key to continue when wget-%arch% is placed in:
-	echo "%~dp0000-wget\%arch%\"
-	echo.
-	pause>nul
-
-	if exist "%~dp0000-wget\%arch%\wget.exe" (
-		echo wget-%arch% is succesfully placed where it should, proceeding...
+	if exist "%wget_path%\wget.exe" (
+		echo wget.exe is succesfully placed where it should, proceeding...
 		echo.
 		ping 127.0.0.1 -n %ping_timer% > nul
 	) else (
-		echo ERROR! wget-%arch% can't be found in 409-wget\%arch%\
+		echo ERROR! wget.exe can't be found in:
+		echo %wget_path%\wget.exe
 		echo Press any key to repeat the process...
 		echo.
 		pause > nul
