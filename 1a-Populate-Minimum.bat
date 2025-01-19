@@ -47,5 +47,8 @@ echo ;windows6.0-kb5033466-x86-2023-12-Servicing-Stuck-Update-for-WS2008.msu htt
 echo ;windows6.0-kb5034867-x64-2024-02-Servicing-Stack-Update-for-WS2008.msu https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2024/02/windows6.0-kb5034867-x64_e63e8be2d160e9b3bc4383d897034a68e2f07173.msu>>202-SSU\filelist.txt
 echo ;windows6.0-kb5034867-x86-2024-02-Servicing-Stack-Update-for-WS2008.msu https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2024/02/windows6.0-kb5034867-x86_bd78faa259046a980571c5f4485d5a4a1323df33.msu>>202-SSU\filelist.txt
 
-echo windows6.0-kb5039341-x64-2024-06-Servicing-Stack-Update-for-WS2008.msu https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2024/06/windows6.0-kb5039341-x64_2dfad504a6771157472ed3647d021e7b3211c505.msu>>202-SSU\filelist.txt
-echo windows6.0-kb5039341-x86-2024-06-Servicing-Stack-Update-for-WS2008.msu https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2024/06/windows6.0-kb5039341-x86_7a86cb8540059ece4f1a420d62392446dfc8c80d.msu>>202-SSU\filelist.txt
+echo ;windows6.0-kb5039341-x64-2024-06-Servicing-Stack-Update-for-WS2008.msu https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2024/06/windows6.0-kb5039341-x64_2dfad504a6771157472ed3647d021e7b3211c505.msu>>202-SSU\filelist.txt
+echo ;windows6.0-kb5039341-x86-2024-06-Servicing-Stack-Update-for-WS2008.msu https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2024/06/windows6.0-kb5039341-x86_7a86cb8540059ece4f1a420d62392446dfc8c80d.msu>>202-SSU\filelist.txt
+
+echo windows6.0-kb5050682-x64-2025-01-Servicing-Stack-Update-for-WS2008.msu https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/01/windows6.0-kb5050682-x64_22a859e66fa0ac4ec83eabe31de8ffa457194c06.msu>>202-SSU\filelist.txt
+echo windows6.0-kb5050682-x86-2025-01-Servicing-Stack-Update-for-WS2008.msu https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2025/01/windows6.0-kb5050682-x86_4c8b367acfdfa9831c4e73bb6d1e655223c5838f.msu>>202-SSU\filelist.txt

@@ -35,3 +35,10 @@ echo windows6.0-KB954956-x86-TinkerSounds.exe http://download.windowsupdate.com/
 
 echo windows6.0-KB932926-x64-Secure-Online-Key-Backup.cab http://www.download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/windows6.0-kb932926-x64_e9687066407ffa045cc15dede3c1086ea722165a.cab>>411-Ultimate-Extras\filelist.txt
 echo windows6.0-KB932926-x86-Secure-Online-Key-Backup.cab http://www.download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/windows6.0-kb932926-x86_8549c3334291e952e60512bb3e0a6fac14c8814b.cab>>411-Ultimate-Extras\filelist.txt
+
+echo Windows6.0-KB946253-v2-x64-RC1-GDI-Black-Screen-External-Monitors-Docking-Laptops.cab http://www.download.windowsupdate.com/msdownload/update/software/updt/2008/01/windows6.0-kb946253-v2-x64-rc1_4accbd8fbfb5fdbdd1c900c09a3c92298f93529d.cab>>411-Ultimate-Extras\filelist.txt
+echo Windows6.0-KB946253-x86-RC1-GDI-Black-Screen-External-Monitors-Docking-Laptops.cab http://www.download.windowsupdate.com/msdownload/update/software/updt/2008/01/windows6.0-kb946253-x86-rc1_9b1b5469ce9106747dc4df5bc69d15c7a338af22.cab>>411-Ultimate-Extras\filelist.txt
+
+@REM echo windows-kb890830-x86-v5.057.exe http://download.windowsupdate.com/d/msdownload/update/software/uprl/2018/02/windows-kb890830-v5.57_857a41145b574c54f657b0162ab65ccd8cdec7af.exe>>411-Ultimate-Extras\filelist.txt
+@REM echo windows-kb890830-x64-v5.129.exe http://download.windowsupdate.com/c/msdownload/update/software/uprl/2024/09/windows-kb890830-x64-v5.129_34e450b301ef837c22d1e0d082ce35e775e813c3.exe>>411-Ultimate-Extras\filelist.txt
+@REM echo windows-kb890830-x86-v5.129.exe http://download.windowsupdate.com/d/msdownload/update/software/uprl/2024/09/windows-kb890830-v5.129_9a40f8e1d839a077acd660d6b30bc41c1cde5960.exe>>411-Ultimate-Extras\filelist.txt
