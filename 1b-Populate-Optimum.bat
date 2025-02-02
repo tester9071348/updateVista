@@ -13,6 +13,7 @@ echo 407-BypassESU_v7_WS2008-x86-x64-(pass=2023).7z https://gitlab.com/stdout12/
 echo 408-WU_DataStore_Fix-x86-x64.zip https://gitlab.com/stdout12/adns/uploads/e4a9c447ae15f7eb8fc42d8e8db54879/WU_DataStore_Fix.zip>>001-Tools\filelist.txt
 echo 410-WMF30_KB2506146_Vista_Installer-x86-x64.7z https://gitlab.com/stdout12/adns/uploads/caed19915206e9b2cb6dde377b9ed19e/WMF30-KB2506146-Vista-Installer.7z>>001-Tools\filelist.txt
 
+echo ;DirectX-Repack-x86-x64.zip https://github.com/stdin82/htfx/releases/download/v0.0.2/DirectX_Redist_Repack_x86_x64.zip>>001-Tools\filelist.txt
 echo DirectX-Repack-x86-x64.zip https://github.com/stdin82/htfx/releases/download/v0.0.3/DirectX_Redist_Repack_x86_x64.zip>>001-Tools\filelist.txt
 
 echo ;dotNetFx35-Repack-x86-x64-20240113.zip https://github.com/abbodi1406/dotNetNT6/releases/download/v2024.01.09/dotNetFx35_x86_x64_20240113.zip>>001-Tools\filelist.txt
