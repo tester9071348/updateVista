@@ -131,8 +131,8 @@ echo windows6.0-kb4101477-x86-Security-Update-for-WS2008-(Replaces-KB3108381).ms
 echo windows6.0-kb4474419-v4-x64-2019-11-SHA2-Code-Signing-Support-Update-for-WS2008.msu https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2019/09/windows6.0-kb4474419-v4-x64_09cb148f6ef10779d7352b7269d66a7f23019207.msu>>101-Important-Updates\filelist.txt
 echo windows6.0-kb4474419-v4-x86-2019-11-SHA2-Code-Signing-Support-Update-for-WS2008.msu https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2019/09/windows6.0-kb4474419-v4-x86_fd568cb47870cd8ed5ba10e1dd3c49061894030e.msu>>101-Important-Updates\filelist.txt
 
-echo windows6.0-kb4493730-x64-2019-04-Servicing-stack-update-for-WS2008.msu https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2019/04/windows6.0-kb4493730-x64_5cb91f4e9000383f061b80f88feffdf228c2443c.msu>>101-Important-Updates\filelist.txt
-echo windows6.0-kb4493730-x86-2019-04-Servicing-stack-update-for-WS2008.msu https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2019/04/windows6.0-kb4493730-x86_ab4368f19db796680ff445a7769886c4cdc009a0.msu>>101-Important-Updates\filelist.txt
+echo windows6.0-kb4493730-x64-2019-04-Servicing-Stack-Update-for-WS2008.msu https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2019/04/windows6.0-kb4493730-x64_5cb91f4e9000383f061b80f88feffdf228c2443c.msu>>101-Important-Updates\filelist.txt
+echo windows6.0-kb4493730-x86-2019-04-Servicing-Stack-Update-for-WS2008.msu https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2019/04/windows6.0-kb4493730-x86_ab4368f19db796680ff445a7769886c4cdc009a0.msu>>101-Important-Updates\filelist.txt
 
 ::--------------------------------------------------------------------------------------
 mkdir 102-ndp2.0^&3.0
@@ -310,8 +310,8 @@ echo ;windows6.0-kb4575904-x86-2020-07-ESU-Preparation-Package-for-WS2008.msu ht
 echo windows6.0-kb5016891-x64-2022-08-ESU-Licensing-Preparation-Package-for-WS2008.msu https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/08/windows6.0-kb5016891-x64_1b5f7e1030f5d229a7618c09f1617fd1ed00e90f.msu>>202-SSU\filelist.txt
 echo windows6.0-kb5016891-x86-2022-08-ESU-Licensing-Preparation-Package-for-WS2008.msu https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2022/08/windows6.0-kb5016891-x86_cf3aef17f12a6dc85dd20a06e5ba9f4c882e286f.msu>>202-SSU\filelist.txt
 
-echo ;windows6.0-kb5033466-x64-2023-12-Servicing-Stuck-Update-for-WS2008.msu https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2023/12/windows6.0-kb5033466-x64_06511d01588a683607ca8fe6a094f7bd292f6b1b.msu>>202-SSU\filelist.txt
-echo ;windows6.0-kb5033466-x86-2023-12-Servicing-Stuck-Update-for-WS2008.msu https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/12/windows6.0-kb5033466-x86_2774074289651d45077083d45f3f4b0957d741d3.msu>>202-SSU\filelist.txt
+echo ;windows6.0-kb5033466-x64-2023-12-Servicing-Stack-Update-for-WS2008.msu https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/secu/2023/12/windows6.0-kb5033466-x64_06511d01588a683607ca8fe6a094f7bd292f6b1b.msu>>202-SSU\filelist.txt
+echo ;windows6.0-kb5033466-x86-2023-12-Servicing-Stack-Update-for-WS2008.msu https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/12/windows6.0-kb5033466-x86_2774074289651d45077083d45f3f4b0957d741d3.msu>>202-SSU\filelist.txt
 
 echo ;windows6.0-kb5034867-x64-2024-02-Servicing-Stack-Update-for-WS2008.msu https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2024/02/windows6.0-kb5034867-x64_e63e8be2d160e9b3bc4383d897034a68e2f07173.msu>>202-SSU\filelist.txt
 echo ;windows6.0-kb5034867-x86-2024-02-Servicing-Stack-Update-for-WS2008.msu https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2024/02/windows6.0-kb5034867-x86_bd78faa259046a980571c5f4485d5a4a1323df33.msu>>202-SSU\filelist.txt
