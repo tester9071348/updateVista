@@ -12,7 +12,7 @@ for /f "tokens=6" %%v in ('Reg Query "HKLM\SOFTWARE\Microsoft\Windows NT\Current
 
 if "%ProductName%" == "Ultimate" (
 	pushd "%~dp0411-Ultimate-Extras"
-	echo Installing ultimate extras...
+	echo Installing Ultimate Extras...
 	for %%f in (*%arch%*.cab) do (
 		echo %%f
 		mkdir tmp%%f
