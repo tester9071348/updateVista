@@ -103,6 +103,9 @@ echo windows6.0-kb4018556-x86-Security-Update-for-WS2008-[Problematics].msu http
 echo windows6.0-kb4019204-x64-Security-Update-win32k-Information-Disclosure-(Replaced-by-KB4534303)-[LongScan].msu https://catalog.s.download.windowsupdate.com/c/csa/csa/secu/2017/05/windows6.0-kb4019204-x64-custom_d9d9d6baa3ea706ff7148ca2c0a06f861c1d77c4.msu>>101-Important-Updates\filelist.txt
 echo windows6.0-kb4019204-x86-Security-Update-win32k-Information-Disclosure-(Replaced-by-KB4534303)-[LongScan].msu https://catalog.s.download.windowsupdate.com/c/csa/csa/secu/2017/05/windows6.0-kb4019204-x86-custom_cc1a90841c15759e36c5095580dfb0b32b34eb8a.msu>>101-Important-Updates\filelist.txt
 
+echo windows6.0-kb4019276-x64-Update-for-WS2008-(TLS1.1^&1.2).msu https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/11/windows6.0-kb4019276-x64_014037c8c591841a3b938ffe16197b59c8ce3416.msu>>101-Important-Updates\filelist.txt
+echo windows6.0-kb4019276-x86-Update-for-WS2008-(TLS1.1^&1.2).msu https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/11/windows6.0-kb4019276-x86_c342a7664b8e1afca9e6384c8ed867ab12249512.msu>>101-Important-Updates\filelist.txt
+
 echo windows6.0-kb4019478-x64-Update-for-d3dcompiler-v1.100-for-WS2008.msu https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/08/windows6.0-kb4019478-x64-custom_1fe64b261c894399b898c38ba3d16b71567d1445.msu>>101-Important-Updates\filelist.txt
 echo windows6.0-kb4019478-x86-Update-for-d3dcompiler-v1.100-for-WS2008.msu https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2017/08/windows6.0-kb4019478-x86-custom_83098465b9ee0b4b39e02fa8f6853fe196966a26.msu>>101-Important-Updates\filelist.txt
 
