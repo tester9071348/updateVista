@@ -327,8 +327,8 @@ echo windows6.0-kb5050682-x86-2025-01-Servicing-Stack-Update-for-WS2008.msu http
 ::--------------------------------------------------------------------------------------
 mkdir 203-Bulk
 
-echo windows6.0-kb2522422-x64-Recommended-Update-for-Windows6.0-(Cannot-print-from-IE9-with-some-canon-printers).msu https://catalog.s.download.windowsupdate.com/msdownload/update/software/updt/2011/04/windows6.0-kb2522422-x64_281f87ace7026084c7f48a3a8a1e75e57bac1426.msu>>203-Bulk\filelist.txt
-echo windows6.0-kb2522422-x86-Recommended-Update-for-Windows6.0-(Cannot-print-from-IE9-with-some-canon-printers).msu https://catalog.s.download.windowsupdate.com/msdownload/update/software/updt/2011/04/windows6.0-kb2522422-x86_298cf569d3ae08c82e99f793891392f444e01c5b.msu>>203-Bulk\filelist.txt
+echo windows6.0-kb2522422-x64-Recommended-Update-for-Windows6.0-(Cannot-print-from-IE9-with-some-Canon-printers).msu https://catalog.s.download.windowsupdate.com/msdownload/update/software/updt/2011/04/windows6.0-kb2522422-x64_281f87ace7026084c7f48a3a8a1e75e57bac1426.msu>>203-Bulk\filelist.txt
+echo windows6.0-kb2522422-x86-Recommended-Update-for-Windows6.0-(Cannot-print-from-IE9-with-some-Canon-printers).msu https://catalog.s.download.windowsupdate.com/msdownload/update/software/updt/2011/04/windows6.0-kb2522422-x86_298cf569d3ae08c82e99f793891392f444e01c5b.msu>>203-Bulk\filelist.txt
 
 echo windows6.0-kb2545698-x64-Recommended-Update-for-Windows6.0-(Blurred-text-on-IE9-with-some-core-fonts).msu https://catalog.s.download.windowsupdate.com/msdownload/update/software/updt/2011/06/windows6.0-kb2545698-x64_5ae27a20410357993be57e5fb4c134d6834509ed.msu>>203-Bulk\filelist.txt
 echo windows6.0-kb2545698-x86-Recommended-Update-for-Windows6.0-(Blurred-text-on-IE9-with-some-core-fonts).msu https://catalog.s.download.windowsupdate.com/msdownload/update/software/updt/2011/06/windows6.0-kb2545698-x86_1fdb1cbb8200317d27ef54eb612f33db2b68c696.msu>>203-Bulk\filelist.txt
