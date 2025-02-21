@@ -819,7 +819,7 @@ if exist "%~dp0RESTART.txt" (goto :RESTART)
 
 :WUPDATE
 echo ===============================================================================
-echo Finnished installing updates. The Windows Update is set to LegacyUpdate.
+echo Finnished installing updates. The Windows Update is set to Legacy Update.
 echo Scanning for updates...
 echo ===============================================================================
 
